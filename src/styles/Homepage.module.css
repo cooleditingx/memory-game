@@ -8,7 +8,7 @@
 body {
   padding: 0;
   margin: 0;
-  overflow-y: hidden;
+  /* overflow-y: hidden; */
   background-image: url("src/assets/bg.png");
   background-size: cover;
   height: 100vh;
@@ -54,7 +54,7 @@ h1 {
     margin-top: 0;
     margin-bottom: 40px;
 }
-.button-container {
+.buttonContainer {
     display: flex;
     gap: 20px;
     justify-content: center;
@@ -94,7 +94,7 @@ button svg {
 button:focus svg {
   animation: spin_357 0.5s linear;
 } */
-.left-controls {
+.leftControls {
     position: absolute;
     bottom: 20px;
     left: 20px;
@@ -103,7 +103,7 @@ button:focus svg {
     z-index: 2;
 }
 
-.left-controls button {
+.leftControls button {
     width: 50px;
     height: 50px;
     border-radius: 50%;
@@ -129,7 +129,7 @@ button:focus svg {
         font-size: 20px;
     }
 
-    .button-container {
+    .buttonContainer {
         gap: 15px;
     }
 }
