@@ -4,12 +4,14 @@ function Medium (){
     return (
         <>
         <h1>Medium Level</h1>
-        <div className={styles.cardSection}>
+        <div className={styles.cardContainer}>
+        <div id={styles.Medium} className={styles.cardSection}>
                 <Card/>
                 <Card/>
                 <Card/>
                 <Card/>
             </div>
+        </div>
         </>
     )
 }

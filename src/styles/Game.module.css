@@ -13,4 +13,11 @@
     width: 100%;
     align-items: center;
     justify-content: center;
+    padding: 5rem 0rem;
+}
+#Medium.cardSection {
+    width: 65%;
+}
+#Hard.cardContainer {
+    padding: 0%;
 }

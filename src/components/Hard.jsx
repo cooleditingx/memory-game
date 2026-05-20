@@ -5,7 +5,7 @@ function Hard (){
     return (
         <>
         <h1>Hard Level</h1>
-        <div className={styles.cardContainer}>
+        <div id={styles.Hard} className={styles.cardContainer}>
         <div className={styles.cardSection}>
         <Card/>
         <Card/>

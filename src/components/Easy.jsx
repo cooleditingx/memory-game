@@ -6,10 +6,12 @@ function Easy (){
     return (
         <>
             <h1>Easy Level</h1>
+            <div className={styles.cardContainer}>
             <div className={styles.cardSection}>
                 <Card/>
                 <Card/>
                 <Card/>
+            </div>
             </div>
         </>
     )
