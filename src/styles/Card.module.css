@@ -21,9 +21,11 @@
   align-items: center;
   border-radius: 20px;
   transition: 700ms;
-  background: linear-gradient(43deg, rgb(65, 88, 208) 0%, rgb(200, 80, 192) 46%, rgb(255, 204, 112) 100%);
 }
-
+#card::before{
+  background-color: transparent;
+  color: transparent;
+}
 .subtitle {
   transform: translateY(160px);
   color: rgb(134, 110, 221);
@@ -101,7 +103,6 @@
 
 .card::before {
   content: '';
-  background: linear-gradient(43deg, rgb(65, 88, 208) 0%, rgb(200, 80, 192) 46%, rgb(255, 204, 112) 100%);
   filter: blur(2rem);
   opacity: 30%;
   width: 100%;

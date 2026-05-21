@@ -1,7 +1,7 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import styles from "../src/styles/Homepage.module.css"
-import App from './App.jsx'
+// import App from './App.jsx'
 import { createBrowserRouter, RouterProvider } from 'react-router'
 import Homepage from './components/Homepage.jsx'
 import Easy from './components/Easy.jsx'

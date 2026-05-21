@@ -1,7 +1,13 @@
+import { useState } from "react";
 import styles from "../styles/Card.module.css"
 import styled from "styled-components";
 
-function Card(){
+function Card({card}){
+  const [imageloaded,setimageloaded] = useState(false)
+  const mystyle = {
+    backgroundImage: `url(${card.image})`,
+    backgroundSize: "cover",
+  }
     return (
       <>
       <StyledWrapper>
@@ -32,7 +38,7 @@ function Card(){
             <div className="tracker tr-23" />
             <div className="tracker tr-24" />
             <div className="tracker tr-25" />
-            <div id="card"></div>
+            <div id="card" style={mystyle}></div>
             </div>
           </div>
       </StyledWrapper>
@@ -62,7 +68,6 @@ const StyledWrapper = styled.div`
     align-items: center;
     border-radius: 20px;
     transition: 700ms;
-    background: linear-gradient(43deg, rgb(65, 88, 208) 0%, rgb(200, 80, 192) 46%, rgb(255, 204, 112) 100%);
   }
 
   .subtitle {
@@ -143,7 +148,6 @@ const StyledWrapper = styled.div`
 
   #card::before {
     content: '';
-    background: linear-gradient(43deg, rgb(65, 88, 208) 0%, rgb(200, 80, 192) 46%, rgb(255, 204, 112) 100%);
     filter: blur(2rem);
     opacity: 30%;
     width: 100%;
@@ -392,21 +396,6 @@ const StyledWrapper = styled.div`
      /* Non-prefixed version, currently
   									supported by Chrome, Edge, Opera and Firefox */
   }`;
-async function fetchdata() {
-  const data = await fetch('https://hp-api.onrender.com/api/characters').then(r=>r.json())
-  let characterarr = []
-  for (let x =0; x<data.length;x++){
-    if (data[x].image !== ""){
-        let character = {
-        name: data[x].name,
-        id: data[x].id,
-        image: data[x].image
-      }
-      characterarr.push(character)
-    } 
-    }
-    return characterarr
-  }
-const characterarr = await fetchdata()
-console.log(characterarr)
+
+
 export default Card
