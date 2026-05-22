@@ -68,15 +68,23 @@ function Easy() {
   if (loading || cards.length ==0) {
     return (
       <>
-        <h1>Easy Level</h1>
-        <p>Loading cards...</p>
+        <div id={styles.loading}>
+        <div aria-live="assertive" role="alert" className={styles.loader}></div>
+        </div>
       </>
     );
   }
-
+  let score = 0
+  let bestscore = 0
   return (
     <>
+    <div className={styles.header}>
       <h1>Easy Level</h1>
+      <div className={styles.scores}>
+      <h3>Score:{score}</h3>
+      <h3>Best Score: {bestscore}</h3>
+      </div>
+    </div>
       <div className={styles.cardContainer}>
         <div className={styles.cardSection}>
           {cards.map(card => (

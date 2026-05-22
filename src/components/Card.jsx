@@ -6,7 +6,7 @@ function Card({card}){
   const [imageloaded,setimageloaded] = useState(false)
   const mystyle = {
     backgroundImage: `url(${card.image})`,
-    backgroundSize: "cover",
+    backgroundSize: "cover"
   }
     return (
       <>
@@ -52,11 +52,6 @@ const StyledWrapper = styled.div`
     width: 190px;
     height: 254px;
     transition: 200ms;
-  }
-
-  .container:active {
-    width: 180px;
-    height: 245px;
   }
 
   #card {
