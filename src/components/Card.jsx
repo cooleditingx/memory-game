@@ -2,8 +2,25 @@ import { useState } from "react";
 import styles from "../styles/Card.module.css"
 import styled from "styled-components";
 
-function Card({card}){
+function Card({card,oncardclick,gameover}){
+  console.log("Card component rendered with:", card.name);  
   const [imageloaded,setimageloaded] = useState(false)
+  const [ifflipped,setifflipped] = useState(false)
+  const mybackstyle = {
+    backgroundImage: `url(src/assets/backbg.webp)`,
+    backgroundSize: "cover"
+  }
+  const handleflip = () => {
+    console.log("CLICKED - ifflipped is now:", !ifflipped);
+    setifflipped(!ifflipped)
+    console.log("CLICKED - ifflipped is now:", !ifflipped);
+  }
+  const handlebackclick = ()=> {
+    setifflipped(false)
+    if (!gameover){
+    oncardclick()
+    }
+  }
   const mystyle = {
     backgroundImage: `url(${card.image})`,
     backgroundSize: "cover"
@@ -11,6 +28,40 @@ function Card({card}){
     return (
       <>
       <StyledWrapper>
+        <div className={`card ${ifflipped ? "flipped" : ""}`}>
+          <div className="cardfront" onClick={handlebackclick}>
+            <div className="container noselect">
+              <div className="canvas">
+                <div className="tracker tr-1" />
+                <div className="tracker tr-2" />
+              <div className="tracker tr-3" />
+              <div className="tracker tr-4" />
+              <div className="tracker tr-5" />
+              <div className="tracker tr-6" />
+              <div className="tracker tr-7" />
+              <div className="tracker tr-8" />
+              <div className="tracker tr-9" />
+              <div className="tracker tr-10" />
+              <div className="tracker tr-11" />
+              <div className="tracker tr-12" />
+              <div className="tracker tr-13" />
+              <div className="tracker tr-14" />
+              <div className="tracker tr-15" />
+              <div className="tracker tr-16" />
+              <div className="tracker tr-17" />
+              <div className="tracker tr-18" />
+              <div className="tracker tr-19" />
+              <div className="tracker tr-20" />
+              <div className="tracker tr-21" />
+              <div className="tracker tr-22" />
+              <div className="tracker tr-23" />
+              <div className="tracker tr-24" />
+              <div className="tracker tr-25" />
+              <div id="card" style={mystyle} onClick={handleflip}></div>
+              </div>
+            </div>
+          </div>
+          <div className="cardback" onClick={handlebackclick}>
         <div className="container noselect">
           <div className="canvas">
             <div className="tracker tr-1" />
@@ -38,22 +89,30 @@ function Card({card}){
             <div className="tracker tr-23" />
             <div className="tracker tr-24" />
             <div className="tracker tr-25" />
-            <div id="card" style={mystyle}></div>
+            <div id="card" style={mybackstyle}></div>
             </div>
           </div>
+          </div>
+        </div>
       </StyledWrapper>
       </>
   );
 }
 const StyledWrapper = styled.div`
-  /*works janky on mobile :<*/
+  display: "inline-block";
   .container {
     position: relative;
     width: 190px;
     height: 254px;
     transition: 200ms;
   }
-
+  .card {
+    width: 190px;
+    height: 254px;
+    perspective: 1000px;
+    transform-style: preserve-3d;
+    transition: transform 0.6s ease;
+  }
   #card {
     position: absolute;
     inset: 0;
@@ -65,6 +124,21 @@ const StyledWrapper = styled.div`
     transition: 700ms;
   }
 
+  .card.flipped {
+    transform: rotateY(180deg);
+  }
+
+  .cardfront,
+  .cardback {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+  }
+
+  .cardback {
+    transform: rotateY(180deg);
+  }
   .subtitle {
     transform: translateY(160px);
     color: rgb(134, 110, 221);

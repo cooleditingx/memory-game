@@ -8,6 +8,28 @@
     justify-content: space-evenly;
     gap: 2rem;
 }
+dialog:open {
+    align-items: center;
+    text-align: center;
+    width: 50%;
+    height: 50%;
+    border-radius: 24px;
+    border: none;
+    justify-content: space-evenly;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    overflow: hidden;
+    background-image: url("../assets/backbg.webp");
+}
+dialog::backdrop {
+    background-color: #0000008b;
+}
+dialog:open h1 {
+    padding: 0;
+    font-size: 8rem;
+    color: #fff;
+}
 .cardContainer {
     display: flex;
     width: 100%;
@@ -15,11 +37,13 @@
     justify-content: center;
     padding: 5rem 0rem;
 }
+
 #Medium.cardSection {
     width: 65%;
 }
-#Hard.cardContainer {
+#Hard.cardSection {
     padding: 0%;
+    width: 100%;
 }
 .loader {
   --hue: 210;
@@ -78,23 +102,24 @@
 }
 .header {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: space-around;
-    /* align-items: center; */
-}
-.header h1 {
-    padding: 2rem 0 2rem 22rem;
+    align-items: center;
 }
 .scores {
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: center;
     align-items: center;
-    padding-top: 3rem;
+    padding: 1rem;
+    gap: 5rem;
+    background-color: rgba(0, 0, 0, 0.406);
+    border-radius: 16px;
+    width: fit-content;
+    text-align: center;
 }
 .scores h3 {
     align-self: flex-start;
-    padding-left: 1rem;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     text-align: center;
     /* font-size: 5rem; */
